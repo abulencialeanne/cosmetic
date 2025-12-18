@@ -6,285 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cosmetic Products</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Great+Vibes&display=swap"
     rel="stylesheet">
-
   <style>
-    .navbar-card {
-      background-color: #d9708c;
-      border-radius: 0;
-      padding: 0.75rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1030;
-    }
-
-    .site-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
-      color: #fff;
-    }
-
     body {
-      padding-top: 120px;
+      background: url("cover4.jpg") no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .card-body .h6 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      color: #c692ac;
-    }
-
-    .card {
-      border-radius: 20px;
-      background-color: #ffe4ec;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .card:hover {
-      background-color: #ffd6e8;
-      transform: scale(1.03);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .card:active {
-      background-color: #ffb6d2;
-      box-shadow: 0 0 0 4px rgba(255, 182, 210, 0.5);
-    }
-
-    .card-img-top {
-      max-width: 80%;
-      height: 180px;
-      object-fit: contain;
-      border-radius: 20px;
-      transition: transform 0.3s ease;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .card-img-top:hover {
-      transform: scale(1.05);
-    }
-
-    .card-body {
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 1rem;
-      background-color: transparent;
     }
 
-    .card-body .h6 {
-      font-weight: 550;
-      color: #45323b;
-      margin-bottom: 1px;
+    .cover-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #d63384;
+      margin-bottom: 2rem;
     }
 
-    .nav-arrow {
-      background: none;
+    .browse-btn {
+      font-size: 1.2rem;
+      padding: 0.75rem 2rem;
+      background-color: #d63384;
+      color: white;
       border: none;
-      font-size: 2rem;
-      color: #0d6efd;
-      cursor: pointer;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
-    .nav-arrow:disabled {
-      color: #ccc;
-      cursor: not-allowed;
-    }
-
-    #modalDescription {
-      text-align: justify;
-      line-height: 1.5;
+    .browse-btn:hover {
+      background-color: #c2185b;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row-10">
-      <div class="col">
-<div class="navbar-card mb-2 fixed-top d-flex align-items-center px-3">
-  <div class="flex-grow-1 text-center">
-    <div class="site-title">Cosmetic Products</div>
-  </div>
-  <a href="cover.html" class="btn btn-outline-light btn-sm fw-semibold">
-    <i class="bi bi-box-arrow-right"></i>
-  </a>
-</div>
+  <main>
+    <div class="cover-title">Cosmetic Products</div>
+    <a href="gallery.html" class="browse-btn">Browse Now!</a>
+  </main>
 
-
-
-      </div>
+  <footer class="footer py-3 bg-light text-center">
+    <div class="container">
+      <span class="text-muted d-block">
+        Data provided by
+        <a href="https://makeup-api.herokuapp.com/" target="_blank" class="text-decoration-none fw-semibold"
+          style="color:#d63384;">
+          Makeup API
+        </a>
+      </span>
+      <span class="text-muted d-block">
+        Background image credit:
+        <a href="https://unsplash.com/photos/pink-and-brown-makeup-brush-set-xwM61TPMlYk" target="_blank"
+          class="text-decoration-none fw-semibold" style="color:#d63384;">
+          Unsplash
+        </a>
+      </span>
     </div>
-  </div>
-
-  <div class="container mb-2">
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="brandSelect" class="form-label">Choose a Brand:</label>
-        <select id="brandSelect" class="form-select">
-          <option value="maybelline">Maybelline</option>
-          <option value="colourpop">ColourPop</option>
-          <option value="l'oreal">L'Oréal</option>
-          <option value="covergirl">CoverGirl</option>
-          <option value="milani">Milani</option>
-          <option value="e.l.f.">e.l.f.</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="typeSelect" class="form-label">Choose a Product Type:</label>
-        <select id="typeSelect" class="form-select">
-          <option value="lipstick">Lipstick</option>
-          <option value="foundation">Foundation</option>
-          <option value="eyeshadow">Eyeshadow</option>
-          <option value="blush">Blush</option>
-          <option value="mascara">Mascara</option>
-          <option value="nail_polish">Nail Polish</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row justify-content-center" id="container-row"></div>
-    <div class="d-flex justify-content-center my-4">
-      <button id="prevBtn" class="nav-arrow">
-        <i class="bi bi-arrow-left-circle"></i>
-      </button>
-      <span id="pageInfo" class="align-self-center mx-3 fw-semibold text-muted"></span>
-      <button id="nextBtn" class="nav-arrow">
-        <i class="bi bi-arrow-right-circle"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="modalTitle"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="text-center">
-            <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3 text-center">
-          </div>
-          <p id="modalPrice" class="fw-bold text-center"></p>
-          <p id="modalDescription"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const containerRow = document.getElementById("container-row");
-    const typeSelect = document.getElementById("typeSelect");
-    const brandSelect = document.getElementById("brandSelect");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-
-    let products = [];
-    let currentPage = 1;
-    const itemsPerPage = 4;
-
-    async function loadMakeupProducts() {
-      containerRow.innerHTML = "";
-      currentPage = 1;
-      const selectedType = typeSelect.value;
-      const selectedBrand = brandSelect.value;
-
-      try {
-        const proxy = "https://corsproxy.io/?";
-        const apiURL = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${selectedBrand}&product_type=${selectedType}`;
-        const response = await fetch(proxy + apiURL);
-
-        products = await response.json();
-
-        if (products.length === 0) {
-          containerRow.innerHTML = `<div class="text-warning">No products found for ${selectedBrand} (${selectedType}).</div>`;
-          return;
-        }
-
-        renderPage();
-      } catch (error) {
-        containerRow.innerHTML = `<div class="text-danger">Failed to load products. Please try again later.</div>`;
-        console.error("Error fetching makeup products:", error);
-      }
-    }
-
-    function renderPage() {
-      containerRow.innerHTML = "";
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      const pageItems = products.slice(start, end);
-      const totalPages = Math.ceil(products.length / itemsPerPage);
-      document.getElementById("pageInfo").textContent = `Page ${currentPage} of ${totalPages}`;
-
-
-      pageItems.forEach((product, i) => {
-        const colorClass = `card-color-${(i % 6) + 1}`;
-        const description = product.description ? product.description : "No description available.";
-
-        const cardWrapper = document.createElement("div");
-        cardWrapper.className = "col-6 col-md-4 col-lg-3 mb-4 px-2 d-flex";
-
-        cardWrapper.innerHTML = `
-  <div class="card shadow-sm w-100">
-    <div class="text-center">
-      <img src="${product.image_link}" class="card-img-top mt-3 mb-5" alt="${product.name}">
-    </div>
-    <div class="card-body">
-      <div class="h6">${product.name}</div>
-    </div>
-  </div>
-`;
-
-        cardWrapper.querySelector(".card").addEventListener("click", () => {
-          showDetails(product.name,
-            product.price ? `$${product.price}` : "Price not available",
-            description,
-            product.image_link);
-        });
-
-        containerRow.appendChild(cardWrapper);
-      });
-
-      prevBtn.disabled = currentPage === 1;
-      nextBtn.disabled = end >= products.length;
-    }
-
-    function showDetails(name, price, description, image) {
-      document.getElementById("modalTitle").textContent = name;
-      document.getElementById("modalPrice").textContent = price;
-      document.getElementById("modalDescription").textContent = description;
-      document.getElementById("modalImage").src = image;
-
-      const modal = new bootstrap.Modal(document.getElementById("productModal"));
-      modal.show();
-    }
-
-    prevBtn.addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderPage();
-      }
-    });
-
-    nextBtn.addEventListener("click", () => {
-      if ((currentPage * itemsPerPage) < products.length) {
-        currentPage++;
-        renderPage();
-      }
-    });
-
-    loadMakeupProducts();
-    typeSelect.addEventListener("change", loadMakeupProducts);
-    brandSelect.addEventListener("change", loadMakeupProducts);
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </footer>
 </body>
+
 </html>
